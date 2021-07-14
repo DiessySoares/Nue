@@ -1,0 +1,7 @@
+{
+  "name": "Nue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

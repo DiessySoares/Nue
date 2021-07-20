@@ -24,3 +24,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.nb-theme-cosmic nb-icon.status-success {
+    color: #2dd36f !important;
+}
+
+.nb-theme-cosmic nb-icon.status-danger {
+    color: #eb445a !important;
+}

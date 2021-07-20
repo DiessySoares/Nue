@@ -1,0 +1,15 @@
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10ch;
+    margin: 0px !important;
+    margin-top: 5px !important;
+}
+
+#desc {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 150px !important;
+    max-height: 250px !important;
+}

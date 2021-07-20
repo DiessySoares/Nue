@@ -1,0 +1,13 @@
+.hidden {
+    visibility: hidden;
+}
+
+nb-sidebar,
+nb-sidebar > div.main-container {
+  transition: cubic-bezier(0.77, 0, 0.175, 1) 0.20s;
+}
+
+nb-layout-header,
+nb-layout-header > .user {
+    transition: cubic-bezier(0.77, 0, 0.175, 1) 1s;
+  }

@@ -1,0 +1,242 @@
+{
+    "usuName": "jose",
+    "usuPasswordSHA256": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "usuEmail": "123@123",
+    "createdAt": "2021-07-18T22:21:32.511Z",
+    "usuSpent": [
+        {
+            "sptMonth": "01/03/2021",
+            "sptDone": false,
+            "sptShop": false,
+            "sptItems": [
+                {
+                    "ispName": "TV",
+                    "ispValue": 8,
+                    "createdAt": "2021-03-18T23:03:48.936Z",
+                    "ispId": 2
+                },
+                {
+                    "ispName": "shop-item0",
+                    "ispValue": 162,
+                    "createdAt": "2021-03-19T07:20:45.508Z",
+                    "ispId": 3
+                },
+                {
+                    "ispName": "shop-item1",
+                    "ispValue": 98,
+                    "createdAt": "2021-03-19T07:20:45.508Z",
+                    "ispId": 4
+                },
+                {
+                    "ispName": "shop-item2",
+                    "ispValue": 7,
+                    "createdAt": "2021-03-19T07:20:45.508Z",
+                    "ispId": 5
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 56,
+                    "createdAt": "2021-03-19T07:27:47.860Z",
+                    "ispId": 6
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 23,
+                    "createdAt": "2021-03-19T07:27:47.860Z",
+                    "ispId": 7
+                }
+            ]
+        },
+        {
+            "sptMonth": "01/04/2021",
+            "sptDone": false,
+            "sptShop": false,
+            "sptItems": [
+                {
+                    "ispName": "TV",
+                    "ispValue": 12,
+                    "createdAt": "2021-04-18T23:03:48.936Z",
+                    "ispId": 2
+                },
+                {
+                    "ispName": "shop-item0",
+                    "ispValue": 45,
+                    "createdAt": "2021-04-19T07:20:45.508Z",
+                    "ispId": 3
+                },
+                {
+                    "ispName": "shop-item1",
+                    "ispValue": 655,
+                    "createdAt": "2021-04-19T07:20:45.508Z",
+                    "ispId": 4
+                },
+                {
+                    "ispName": "shop-item2",
+                    "ispValue": 2,
+                    "createdAt": "2021-04-19T07:20:45.508Z",
+                    "ispId": 5
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 65,
+                    "createdAt": "2021-04-19T07:27:47.860Z",
+                    "ispId": 6
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 45,
+                    "createdAt": "2021-04-19T07:27:47.860Z",
+                    "ispId": 7
+                }
+            ]
+        },
+        {
+            "sptMonth": "01/05/2021",
+            "sptDone": false,
+            "sptShop": false,
+            "sptItems": [
+                {
+                    "ispName": "TV",
+                    "ispValue": 66,
+                    "createdAt": "2021-05-18T23:03:48.936Z",
+                    "ispId": 2
+                },
+                {
+                    "ispName": "shop-item0",
+                    "ispValue": 6,
+                    "createdAt": "2021-05-19T07:20:45.508Z",
+                    "ispId": 3
+                },
+                {
+                    "ispName": "shop-item1",
+                    "ispValue": 60,
+                    "createdAt": "2021-05-19T07:20:45.508Z",
+                    "ispId": 4
+                },
+                {
+                    "ispName": "shop-item2",
+                    "ispValue": 2,
+                    "createdAt": "2021-05-19T07:20:45.508Z",
+                    "ispId": 5
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 66,
+                    "createdAt": "2021-05-19T07:27:47.860Z",
+                    "ispId": 6
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 4,
+                    "createdAt": "2021-05-19T07:27:47.860Z",
+                    "ispId": 7
+                }
+            ]
+        },
+        {
+            "sptMonth": "01/06/2021",
+            "sptDone": false,
+            "sptShop": false,
+            "sptItems": [
+                {
+                    "ispName": "Celular",
+                    "ispValue": 500,
+                    "createdAt": "2021-06-18T23:03:48.936Z",
+                    "ispId": 1
+                },
+                {
+                    "ispName": "TV",
+                    "ispValue": 66,
+                    "createdAt": "2021-06-18T23:03:48.936Z",
+                    "ispId": 2
+                },
+                {
+                    "ispName": "shop-item0",
+                    "ispValue": 88,
+                    "createdAt": "2021-06-19T07:20:45.508Z",
+                    "ispId": 3
+                },
+                {
+                    "ispName": "shop-item1",
+                    "ispValue": 60,
+                    "createdAt": "2021-06-19T07:20:45.508Z",
+                    "ispId": 4
+                },
+                {
+                    "ispName": "shop-item2",
+                    "ispValue": 2,
+                    "createdAt": "2021-06-19T07:20:45.508Z",
+                    "ispId": 5
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 96,
+                    "createdAt": "2021-06-19T07:27:47.860Z",
+                    "ispId": 6
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 4,
+                    "createdAt": "2021-06-19T07:27:47.860Z",
+                    "ispId": 7
+                }
+            ]
+        },
+        {
+            "sptMonth": "01/07/2021",
+            "sptDone": false,
+            "sptShop": false,
+            "sptItems": [
+                {
+                    "ispName": "TV",
+                    "ispValue": 66,
+                    "createdAt": "2021-07-18T23:03:48.936Z",
+                    "ispId": 2
+                },
+                {
+                    "ispName": "shop-item0",
+                    "ispValue": 12,
+                    "createdAt": "2021-07-19T07:20:45.508Z",
+                    "ispId": 3
+                },
+                {
+                    "ispName": "shop-item1",
+                    "ispValue": 55,
+                    "createdAt": "2021-07-19T07:20:45.508Z",
+                    "ispId": 4
+                },
+                {
+                    "ispName": "shop-item2",
+                    "ispValue": 2,
+                    "createdAt": "2021-07-19T07:20:45.508Z",
+                    "ispId": 5
+                },
+                {
+                    "ispName": "shop-item0-19/7",
+                    "ispValue": 887,
+                    "createdAt": "2021-07-19T07:27:47.860Z",
+                    "ispId": 6
+                },
+                {
+                    "ispName": "shop-item1-19/7",
+                    "ispValue": 78,
+                    "createdAt": "2021-07-19T07:27:47.860Z",
+                    "ispId": 7
+                },
+                {
+                    "ispName": "shop-item2-19/7",
+                    "ispValue": 23,
+                    "createdAt": "2021-07-19T07:27:47.860Z",
+                    "ispId": 8
+                },
+                {
+                    "ispName": "shop-item3-19/7",
+                    "ispValue": 63,
+                    "createdAt": "2021-07-19T07:27:47.860Z",
+                    "ispId": 9
+                }
+            ]
+        }
+    ],
+    "updatedAt": "2021-07-19T07:27:47.860Z"
+}

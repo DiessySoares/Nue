@@ -1,3 +1,33 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<div *ngIf="canShow(); else elseBlock">
+  <nb-layout>
+    <nb-layout-header subheader>
+      <nb-icon icon="menu-outline" (click)="toggle()"></nb-icon>
+      <img *ngIf="viewState" src="assets/icon/nue.png" style="width: 10%; margin-left: 15px;">
+    </nb-layout-header>
+
+    <nb-sidebar state="collapsed">
+      <div class="main-container">
+
+        <nb-user shape="semi-round" name="{{getUserName()}}" title="{{greetings()}}" style="padding-bottom: 30%;">
+        </nb-user>
+
+        <nb-menu [items]="items" (click)="toggle()">
+        </nb-menu>
+
+      </div>
+    </nb-sidebar>
+
+    <nb-layout-column class="colored-column-basic">
+
+      <router-outlet *ngIf="viewState"></router-outlet>
+
+    </nb-layout-column>
+  </nb-layout>
+</div>
+<ng-template #elseBlock>
+  <nb-layout>
+    <nb-layout-column class="colored-column-basic">
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+  </nb-layout>
+</ng-template>

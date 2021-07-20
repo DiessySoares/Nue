@@ -1,0 +1,53 @@
+<form [formGroup]="createAccountForm" (ngSubmit)="createAccount()">
+
+  <ion-grid style="padding-top: 20px;">
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <h3>Criar conta</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="padding-top: 60px;">
+      <ion-col>
+        Nome
+        <input type="text" nbInput fullWidth formControlName="validatorName" [(ngModel)]="newUser.usuName"
+          status="{{getInputStatus('validatorName')}}">
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="padding-top: 10px;">
+      <ion-col>
+        Senha
+        <input type="password" nbInput fullWidth formControlName="validatorPassword"
+          [(ngModel)]="newUser.usuPasswordSHA256" status="{{getInputStatus('validatorPassword')}}">
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="padding-top: 10px;">
+      <ion-col>
+        Email
+        <input type="text" nbInput fullWidth formControlName="validatorEmail" [(ngModel)]="newUser.usuEmail"
+          status="{{getInputStatus('validatorEmail')}}">
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row style="padding-top: 100px;">
+      <ion-col>
+        <button nbButton fullWidth routerLink="/login" status="primary">Volta</button>
+      </ion-col>
+      <ion-col>
+        <button nbButton fullWidth [disabled]="!createAccountForm.valid" type="submit" status="primary">Criar</button>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+
+
+  </ion-grid>
+</form>

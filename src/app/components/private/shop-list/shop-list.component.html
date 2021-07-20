@@ -1,0 +1,57 @@
+<div class="itens">
+
+  <ng-container *ngFor="let item of shopList?.sptItems">
+    <nb-icon icon="arrow-forward" style="font-size: 12px;"></nb-icon>
+    {{item.ispValue}}
+  </ng-container>
+
+</div>
+
+<ion-grid>
+  <ion-row style="text-align: center; padding-top: 150px; padding-bottom: 20px; font-size: 40px;">
+
+    <ion-col>
+      R$ {{sumAll()}}
+    </ion-col>
+
+  </ion-row>
+  <form [formGroup]="shopForm" (ngSubmit)="insertShopItem()">
+    <ion-row style="padding-top: 30px;font-size: 20px;">
+
+      <ion-col>
+        <input type="number" formControlName="validatorValue" style="height: 60px;" [(ngModel)]="actualValue" nbInput fullWidth status="primary"
+          placeholder="Preço">
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row style="padding-top: 30px;font-size: 20px;">
+
+      <ion-col>
+        <button nbButton fullWidth status="primary" >
+          <nb-icon icon="plus-square-outline"></nb-icon>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+  </form>
+  <ion-row style="padding-top: 30px;font-size: 20px;">
+
+    <ion-col>
+      <button nbButton hero status="primary" (click)="undo()">
+        <nb-icon icon="refresh-outline"></nb-icon>
+        Desfazer
+      </button>
+    </ion-col>
+
+    <ion-col>
+      <button nbButton hero status="success" style="float: right;" (click)="salvar()">
+        <nb-icon icon="checkmark-outline"></nb-icon>
+        Terminar
+      </button>
+    </ion-col>
+
+  </ion-row>
+
+</ion-grid>

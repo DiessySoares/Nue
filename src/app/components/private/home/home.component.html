@@ -1,0 +1,74 @@
+<nb-tabset style="width: 100%;">
+  <nb-tab tabIcon="home-outline">
+
+    <nb-card>
+      <nb-card-body>
+        <div class="progress-info ng-star-inserted">
+          <div class="subtitle">Gasto esse mes</div>
+          <div class="h3">R$ {{getThisMonth()}}</div>
+          <div class="caption description">
+            <bdi>
+              {{getBalance() < 0? 'Diminuição de ' : 'Aumento de ' }} {{ getBalance() | number : '1.2-2' }} % comparado
+                ao mes passado. </bdi>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-body>
+        <div class="progress-info ng-star-inserted">
+          <div class="subtitle">Gasto mes passado</div>
+          <div class="h3">R$ {{getLastMonth()}}</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-body>
+        <div class="progress-info ng-star-inserted">
+          <div class="subtitle">Gasto Total</div>
+          <div class="h3">R$ {{getTotal()}}</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+  </nb-tab>
+
+  <nb-tab tabIcon="bar-chart-2-outline">
+    <nb-card size="medium">
+
+      <nb-card-header>
+        <span>Gastos</span>
+      </nb-card-header>
+
+      <nb-list class="user-activity-list">
+        <nb-list-item *ngFor="let activity of activities">
+
+          <div class="visited-date">
+            <div class="caption">Data</div>
+            {{activity.actMonth}}
+          </div>
+
+          <div class="visited-pages-count">
+            <div class="caption">Valor</div>
+            <div class="value">
+              {{activity.actValue}}
+            </div>
+          </div>
+
+          <div class="visited-percentages">
+            <div class="caption">Balanço</div>
+            <div class="delta value">
+              <nb-icon icon="{{activity.actPercent > 0? 'arrow-upward-outline':'arrow-downward-outline'}}"
+                status="{{activity.actPercent > 0? 'danger':'success'}}" pack="eva"></nb-icon>
+              {{activity.actPercent | number : '1.2-2'}}
+            </div>
+          </div>
+
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </nb-tab>
+
+</nb-tabset>

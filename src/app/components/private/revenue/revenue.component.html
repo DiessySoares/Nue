@@ -1,0 +1,192 @@
+<nb-card size="medium">
+  <nb-card-header>
+    Receitas
+  </nb-card-header>
+  <nb-list>
+
+
+    <nb-list-item *ngFor="let revenue of revenueFromUser">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>
+              {{revenue.rvnName}}
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>
+              R$ {{revenue.rvnValue}}
+            </p>
+          </ion-col>
+          <ion-col>
+            <div style="float: right;">
+              <button nbButton status="primary" size="small" (click)="isDelete = false; open(dialog, revenue, 'info')">
+                <nb-icon icon="info-outline"></nb-icon>
+
+              </button>
+              <button nbButton status="danger" size="small" (click)="isDelete = true; open(dialog, revenue, 'delete')">
+                <nb-icon icon="close-outline"></nb-icon>
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </nb-list-item>
+
+  </nb-list>
+
+  <nb-card-footer>
+    Total: R$ {{sumRevenue()}}
+  </nb-card-footer>
+
+
+</nb-card>
+
+<button nbButton fullWidth (click)="openCreate(dialogCreate)" status="primary">
+  <nb-icon icon="plus-outline"></nb-icon>
+  ADD
+</button>
+
+
+<ng-template #dialogCreate let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Criar receita</nb-card-header>
+    <nb-card-body class="example-items-col">
+
+      <form [formGroup]="newRevenueForm" (ngSubmit)="createRevenue(); ref.close()">
+
+        <ion-grid>
+
+          <ion-row>
+            <ion-col>
+              <input fullWidth type="text" [(ngModel)]="newRevenue.rvnName" formControlName="validatorName" nbInput
+                placeholder="Nome" status="{{getInputStatus('validatorName')}}">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <textarea nbInput placeholder="Descrição" [(ngModel)]="newRevenue.rvnDesc" formControlName="validatorDesc"
+                id="desc" status="{{getInputStatus('validatorDesc')}}"></textarea>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <input fullWidth type="number" [(ngModel)]="newRevenue.rvnValue" formControlName="validatorValue" nbInput
+                placeholder="Valor recebido" status="{{getInputStatus('validatorValue')}}">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <input fullWidth type="number" [(ngModel)]="newRevenue.rvnTimes" formControlName="validatorTimes" nbInput
+                placeholder="Tempo de duração (Meses)" status="{{getInputStatus('validatorTimes')}}">
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </form>
+
+    </nb-card-body>
+    <nb-card-footer>
+
+      <ion-row>
+        <ion-col>
+          <button nbButton size="small" (click)="ref.close()">Cancelar</button>
+        </ion-col>
+        <ion-col>
+          <button nbButton size="small" fullWidth [disabled]="!newRevenueForm.valid" type="submit"
+            (click)="createRevenue(); ref.close()" status="primary">Criar</button>
+        </ion-col>
+      </ion-row>
+
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+<ng-template #dialog let-data let-ref="dialogRef">
+
+  <nb-card status="{{isDelete? 'danger' : 'info'}}">
+
+    <nb-card-header>{{isDelete? "Remover" : "Informações"}}</nb-card-header>
+    <nb-card-body>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Nome:
+          </ion-col>
+          <ion-col>
+            {{revenueSelected.rvnName}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row *ngIf="revenueSelected.rvnDesc != null">
+          <ion-col>
+            Descrição:
+          </ion-col>
+          <ion-col>
+            {{revenueSelected.rvnDesc}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Valor:
+          </ion-col>
+          <ion-col>
+            {{revenueSelected.rvnValue}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="revenueSelected.rvnTimes != null">
+          <ion-col>
+            Tempo:
+          </ion-col>
+          <ion-col>
+            {{revenueSelected.rvnTimes}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="revenueSelected.rvnTimes != null">
+          <ion-col>
+            Status:
+          </ion-col>
+          <ion-col>
+            {{revenueSelected.rvnStatus}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Criado:
+          </ion-col>
+          <ion-col>
+            {{revenueSelected.createdAt}}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </nb-card-body>
+    <nb-card-footer>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button nbButton size="small" (click)="ref.close()">Fechar</button>
+          </ion-col>
+          <ion-col>
+            <button *ngIf="isDelete" nbButton size="small" (click)="deleteRevenue(); ref.close()">Remover
+              receita</button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </nb-card-footer>
+  </nb-card>
+</ng-template>

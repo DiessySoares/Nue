@@ -1,0 +1,40 @@
+<div class="teste">
+
+
+  <ion-grid>
+
+    <ion-row style="padding-top: 60px;padding-bottom: 60px;">
+      <ion-col>
+        <img src="assets/icon/nuelogo.png" style="width: 80%; display: block; margin-left: auto; margin-right: auto">
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+    <div style="padding-top: 20px;">
+      <input type="text" nbInput fullWidth status="primary" placeholder="Usuario" [(ngModel)]="username">
+    </div>
+
+    <div style="padding-top: 20px;">
+      <input type="password" nbInput fullWidth status="primary" placeholder="Senha" [(ngModel)]="password">
+    </div>
+
+    <div style="padding-top: 20px;">
+      <button nbButton fullWidth status="primary" (click)="login()">Entrar</button>
+    </div>
+
+    <ion-grid style="padding-top: 90px;">
+      <ion-row >
+        <ion-col>
+          <a style="text-align: center; float: left;" routerLink="/createAccount">Criar uma conta</a>
+        </ion-col>
+        <ion-col>
+          <!--nb-checkbox status="basic" style="float: right;" [(ngModel)]="autoLogin">Login automatico</nb-checkbox-->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    
+
+

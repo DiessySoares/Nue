@@ -1,0 +1,189 @@
+<nb-card size="medium">
+  <nb-card-header>
+    <span>Gasto</span>
+    <nb-select placeholder="Selecione o mes" [(selected)]="spentSelected">
+      <nb-option [value]="item" *ngFor="let item of spentFromUser">
+        {{item.sptMonth}}
+      </nb-option>
+    </nb-select>
+  </nb-card-header>
+  <nb-list>
+
+    <nb-list-item *ngFor="let item of spentSelected?.sptItems">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>
+              {{item.ispName}}
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>
+              R$ {{item.ispValue}}
+            </p>
+          </ion-col>
+          <ion-col>
+            <div style="float: right;">
+              <button nbButton status="primary" size="small" (click)="isDelete = false; open(dialog, item, 'info')">
+                <nb-icon icon="info-outline"></nb-icon>
+
+              </button>
+              <button nbButton status="danger" size="small" (click)="isDelete = true; open(dialog, item, 'delete')">
+                <nb-icon icon="close-outline"></nb-icon>
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </nb-list-item>
+
+  </nb-list>
+
+  <nb-card-footer>
+    Total: R$ {{sumSpent()}}
+  </nb-card-footer>
+
+
+</nb-card>
+
+
+<button nbButton fullWidth (click)="openCreate(dialogCreate)" status="primary">
+  <nb-icon icon="plus-outline"></nb-icon>
+  ADD
+</button>
+
+<ng-template #dialogCreate let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Criar gasto</nb-card-header>
+    <nb-card-body class="example-items-col">
+
+      <form [formGroup]="newItemSpentForm" (ngSubmit)="createItemSpent(); ref.close()">
+
+        <ion-grid>
+
+          <ion-row>
+            <ion-col>
+              <input fullWidth type="text" [(ngModel)]="newItemSpent.ispName" formControlName="validatorName" nbInput
+                placeholder="Nome" status="{{getInputStatus('validatorName')}}">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <textarea nbInput placeholder="Descrição" [(ngModel)]="newItemSpent.ispDesc"
+                formControlName="validatorDesc" id="desc" status="{{getInputStatus('validatorDesc')}}"></textarea>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <input fullWidth type="number" [(ngModel)]="newItemSpent.ispValue" formControlName="validatorValue"
+                nbInput placeholder="Valor gasto" status="{{getInputStatus('validatorValue')}}">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <nb-toggle [(ngModel)]="newItemSpent.ispEssential" formControlName="validatorEssential" status="primary"
+                ngDefaultControl>Essencial</nb-toggle>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </form>
+
+    </nb-card-body>
+    <nb-card-footer>
+
+      <ion-row>
+        <ion-col>
+          <button nbButton size="small" (click)="ref.close()">Cancelar</button>
+        </ion-col>
+        <ion-col>
+          <button nbButton size="small" fullWidth [disabled]="!newItemSpentForm.valid" type="submit"
+            (click)="createItemSpent(); ref.close()" status="primary">Criar</button>
+        </ion-col>
+      </ion-row>
+
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+
+
+<ng-template #dialog let-data let-ref="dialogRef">
+
+  <nb-card status="{{isDelete? 'danger' : 'info'}}">
+
+    <nb-card-header>{{isDelete? "Remover" : "Informações"}}</nb-card-header>
+    <nb-card-body>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Nome:
+          </ion-col>
+          <ion-col>
+            {{itemSpentSelected.ispName}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="itemSpentSelected.ispDesc != null">
+          <ion-col>
+            Descrição:
+          </ion-col>
+          <ion-col>
+            {{itemSpentSelected.ispDesc}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Valor:
+          </ion-col>
+          <ion-col>
+            {{itemSpentSelected.ispValue}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="itemSpentSelected.ispEssential != null">
+          <ion-col>
+            Essencial:
+          </ion-col>
+          <ion-col>
+            {{itemSpentSelected.ispEssential? "Sim" : "Não"}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col>
+            Criado:
+          </ion-col>
+          <ion-col>
+            {{itemSpentSelected.createdAt | date:"MM/dd/yy"}}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </nb-card-body>
+    <nb-card-footer>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button nbButton size="small" (click)="ref.close()">Fechar</button>
+          </ion-col>
+          <ion-col>
+            <button *ngIf="isDelete" nbButton size="small" (click)="deleteRevenue(); ref.close()">Remover
+              receita</button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
